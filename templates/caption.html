@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Captioning App - Caption</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #93a5cf, #e4efe9);
+        }
+        .container {
+            margin-top: 100px;
+        }
+
+        .caption-box {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .caption {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        .image-preview {
+            max-width: 500px;
+            max-height: 500px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            {% for prediction in predictions %}
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename=prediction.image_path) }}" class="image-preview" alt="Uploaded image">
+                <div class="caption-box">
+                    <p class="caption">{{ prediction.caption }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+store: './data/best_model_results/'
+preprocessing:
+  tokenizer_dir: './data/tokenizer.json'
+  images_dir: './data/images_dataset/'
+
+  images_features_dir: './data/img_features/'
+  train_test_val_split_csv: './data/annotations/combined_dataset_split.csv'
+  raw_pretrained_embedding_dir: './data/annotations/glove.840B.300d.txt'
+
+nn_params:
+  checkpoint_dir: 'checkpoints/'
+  pred_df_dir: 'derived_data/'
+  loss_dir: 'derived_data/loss_per_epoch.csv'
+  embedding_dim: 300
+  BATCH_SIZE: 32
+  BUFFER_SIZE: 1000
+  EPOCHS: 20
+  units: 512

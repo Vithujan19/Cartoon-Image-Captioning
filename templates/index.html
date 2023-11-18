@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Captioning App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #93a5cf, #e4efe9);
+        }
+        .container {
+            margin-top: 100px;
+        }
+
+        .caption-box {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .caption {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        .image-preview {
+            max-width: 500px;
+            max-height: 500px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="text-center mb-4">Cartoon Image Captioning App</h1>
+                <form method="POST" action="/predict" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="photo">Upload an image</label>
+                        <input type="file" name="photo" class="form-control-file" id="photo" accept="image/*" required multiple>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Generate Caption</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--<!doctype html>-->
+<!--<html>-->
+<!--    <head><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></head>-->
+<!--    <body>-->
+<!--        <div class="container">-->
+<!--            <h1>Sysco image search</h1>-->
+<!--            <form method="POST" enctype="multipart/form-data">-->
+<!--                <input type="file" name="query_img"><br>-->
+<!--                <input type="submit">-->
+<!--            </form>-->
+<!--            <h2>Query image:</h2>-->
+<!--            {% if query_path %}-->
+<!--            <img src="{{ url_for('static',filename =image_path) }}" width="120px">-->
+<!--            {% endif %}-->
+<!--            <h2>Results from Sysco shop:</h2>-->
+<!--            <figure style="float: left; margin-right: 20px; margin-bottom: 20px;">-->
+<!--                <img src="{{url_for('static', filename=image_path)}}" height="90px">-->
+<!--                <figcaption>{{ caption }}</figcaption>-->
+<!--            </figure>-->
+<!--        </div>-->
+<!--    </body>-->
+<!--</html>-->
+
